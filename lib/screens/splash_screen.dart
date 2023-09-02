@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:splash_screen_ui_design_in_flutter/screens/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -8,6 +11,18 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(
+        Duration(seconds: 3),
+        () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HomeScreen(),
+            )));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -22,10 +37,23 @@ class _SplashScreenState extends State<SplashScreen> {
             opacity: 0.4,
           ),
         ),
-        child: Icon(
-          Icons.shopping_cart,
-          size: 200,
-          color: Color(0xFFEF6969),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.shopping_cart,
+              size: 200,
+              color: Color.fromARGB(255, 238, 80, 80),
+            ),
+            Text(
+              "DP Shop",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic),
+            ),
+          ],
         ),
       ),
     );
