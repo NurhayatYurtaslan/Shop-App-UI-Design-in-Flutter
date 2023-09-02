@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:splash_screen_ui_design_in_flutter/screens/home_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   final introKey = GlobalKey<IntroductionScreenState>();
@@ -49,6 +50,25 @@ class OnboardingScreen extends StatelessWidget {
             width: 200,
           ),
           decoration: pageDecoration,
+          footer: Padding(
+            padding: EdgeInsets.only(left: 15, right: 15, top: 50),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(),
+                    ));
+              },
+              child: Text(
+                "Let's a shop",
+                style: TextStyle(fontSize: 18),
+              ),
+              style: ElevatedButton.styleFrom(
+                  minimumSize: Size.fromHeight(55),
+                  backgroundColor: Color(0xFEFFF6969)),
+            ),
+          ),
         ),
       ],
       showSkipButton: false,
