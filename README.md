@@ -1,4 +1,4 @@
-# splash_screen_ui_design_in_flutter
+# shop_app_ui_design_in_flutter
 
 A new Flutter project.
 
